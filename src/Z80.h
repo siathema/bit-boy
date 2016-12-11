@@ -1,4 +1,4 @@
-#include <cstdint>
+#include <stdint.h>
 
 #ifndef _Z80_H_
 #define _Z80_H_
