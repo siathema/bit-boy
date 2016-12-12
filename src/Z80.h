@@ -2,7 +2,7 @@
 
 #ifndef _Z80_H_
 #define _Z80_H_
-class Z80 {
+typedef struct {
 
   uint8_t Accumulator_reg;
   uint8_t Flag_reg;
@@ -17,13 +17,9 @@ class Z80 {
 
   uint8_t Interrupt_Vector_reg;
   uint8_t Memory_Refresh_reg;
-
+  
   uint16_t PC_reg;
   uint16_t SP_reg;
   uint16_t IX, IY;
-
-
-public:
-
-};
+}z80_Registers;
 #endif
