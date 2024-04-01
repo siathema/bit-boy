@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "Z80.h"
+#include "SM83_core.h"
 
 int main(int arc, char** argv) {
   FILE* fp = fopen("assets/DMG_ROM.bin", "r");

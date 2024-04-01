@@ -1,25 +1,33 @@
-#include <stdint.h>
+#ifndef _SM83_CORE_H_
+#define _SM83_CORE_H_
 
-#ifndef _Z80_H_
-#define _Z80_H_
+#include "utils.h"
+
 typedef struct {
+  u8 F_reg;
+  u8 A_reg;
+  u8 B_reg;
+  u8 C_reg;
+  u8 D_reg;
+  u8 E_reg;
+  u8 H_reg;
+  u8 L_reg;
 
-  uint8_t Accumulator_reg;
-  uint8_t Flag_reg;
-  uint8_t A_reg;
-  uint8_t B_reg;
-  uint8_t C_reg;
-  uint8_t D_reg;
-  uint8_t E_reg;
-  uint8_t F_reg;
-  uint8_t H_reg;
-  uint8_t L_reg;
+  u16 PC_reg;
+  u16 SP_reg;
 
-  uint8_t Interrupt_Vector_reg;
-  uint8_t Memory_Refresh_reg;
-  
-  uint16_t PC_reg;
-  uint16_t SP_reg;
-  uint16_t IX, IY;
-}z80_Registers;
+  u64 M_cycles;
+  u64 C_cycles;
+
+  u8 I_Reg;
+}SM83_core;
+
+void fetch(SM83_core* core);
+
+void core_init(SM83_core* core);
+
+void core_run(SM83_core* core);
+
+void core_tick(SM83_core* core);
+
 #endif
